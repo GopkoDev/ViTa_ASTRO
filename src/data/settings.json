@@ -1,0 +1,34 @@
+{
+    "footerIcons" : [
+        {
+            "name": "linkedin",
+            "src": "icons/linkedin.svg",
+            "href": "#",
+            "alt": "image with linkedin icon"
+        },
+        {
+            "name": "instagram",
+            "src": "icons/instagram.svg",
+            "href": "#",
+            "alt": "image with instagram icon"
+        },
+        {
+            "name": "pinterest",
+            "src": "icons/pinterest.svg",
+            "href": "#",
+            "alt": "image with pinterest icon"
+        },
+        {
+            "name": "email",
+            "src": "icons/email.svg",
+            "href": "#",
+            "alt": "image with email icon"
+        },
+        {
+            "name": "phone",
+            "src": "icons/phone.svg",
+            "href": "#",
+            "alt": "image with phone icon"
+        }
+    ]
+}

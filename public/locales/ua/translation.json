@@ -1,0 +1,12 @@
+{
+    "header": {
+      "home": "Головна",
+      "projects": "Проекти",
+      "about": "Про мене",
+      "contact": "Контакт"
+    },
+    "footer": {
+      "test": "ff"
+    }
+  }
+  

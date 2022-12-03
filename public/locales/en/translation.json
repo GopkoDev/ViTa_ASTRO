@@ -1,0 +1,11 @@
+{
+  "header": {
+    "home": "home",
+    "projects": "projects",
+    "about": "about me",
+    "contact": "contact"
+  },
+  "footer": {
+    "test": "ff"
+  }
+}

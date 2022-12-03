@@ -1,0 +1,36 @@
+---
+const lng = "eng";
+const props = Astro.request;
+//console.log(props.url)
+---
+<astro-dropdown data-language={lng}>
+    <li class="header__nav_item language">
+        <p class="language__current">EN</p>
+        <ul class="language__body">
+          <li class="language__body_item"><a href="/">EN</a></li>
+          <li class="language__body_item"><a href="/">IT</a></li>
+          <li class="language__body_item"><a href="/ua">UA</a></li>
+        </ul>
+      </li>
+</astro-dropdown>
+
+
+<script>
+  class AstroDropdown extends HTMLElement {
+    constructor() {
+        super()
+        //console.log(this.dataset.language);
+    }
+    } 
+    customElements.define('astro-dropdown', AstroDropdown) 
+  
+  const language = document.querySelector(".language") as HTMLLIElement;
+  language.addEventListener("click", (e: Event) => {
+    if (e.target.closest(".language")) {
+      language.classList.toggle("open");
+    }
+    if (e.target.matches('.language__body_item')) {
+        console.log('matches')
+    }
+  });
+</script>

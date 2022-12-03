@@ -1,0 +1,33 @@
+{
+    "en": {
+        "header": {
+            "nav": [
+                {
+                    "title": "home",
+                    "href": "{lng}/"
+                },
+                {
+                    "title": "projects",
+                    "href": "{lng}/projects"
+                },
+                {
+                    "title": "about me",
+                    "href": "{lng}/about"
+                },
+                {
+                    "title": "contact",
+                    "href": "{lng}/contact"
+                }
+            ]
+        },
+        "footer": {
+        
+        }
+    },
+    "it": {
+    
+    },
+    "ua": {
+    
+    }
+}

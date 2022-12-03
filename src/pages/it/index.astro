@@ -1,0 +1,24 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import homePageImg from "../../images/home_page.png";
+import "../../styles/pages/Home.scss";
+
+changeLanguage("it");
+---
+<Layout title="Monics">
+	<main class="page home">
+        <section class="home__container">
+          <div class="home__img">
+			<Image src={homePageImg} alt="main page image"/>
+          </div>
+          <h2 class="home__phrase">
+            WHEN YOUR SPACE RESEMBLES YOU IN ALL ASPECTS. WE DESIGN YOUR
+            LIFESTYLE IN A <span>UNIQUE WAY</span>.
+          </h2>
+          <a class="btn home__btn" href="./projects.html">view projects</a>
+        </section>
+      </main>
+</Layout>
+

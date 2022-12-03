@@ -1,0 +1,43 @@
+---
+import HamburgerMenu from "./HamburgerMenu.astro";
+import LanguageDropdown from "./LanguageDropdown.astro";
+import i18next, { t } from "i18next";
+
+import "../styles/components/Header.scss";
+import {navItems} from '../data/settings';
+const language = i18next.language;
+
+const buildUrl = (lng, settingsUrl) => {
+    let url;
+    url = settingsUrl.replace("{lng}", lng)
+    /* if (lng="en"){
+        //console.log('check')
+        url = settingsUrl.replace("{lng}", "")
+    } else {
+        console.log('as')
+        url = settingsUrl.replace("{lng}", lng)
+    } */
+    return url;
+}
+//console.log(language);
+console.log(buildUrl(language, '{lng}/about'))
+
+//mport languages from "../data/languages.json";
+---
+
+<header class="header">
+  <h1 class="header__logo">MONICS</h1>
+  <HamburgerMenu />
+  <nav class="nav__wrapper">
+    <ul class="header__nav">
+      {
+        navItems.map((item) => (
+          <li class="header__nav_item">
+            <a href={buildUrl(language, item.href)}>{t(`header.${item.title}`)}</a>
+          </li>
+        ))
+      }
+      <LanguageDropdown/>
+    </ul>
+  </nav>
+</header>
