@@ -1,36 +1,45 @@
 ---
-const lng = "eng";
-const props = Astro.request;
-//console.log(props.url)
----
-<astro-dropdown data-language={lng}>
-    <li class="header__nav_item language">
-        <p class="language__current">EN</p>
-        <ul class="language__body">
-          <li class="language__body_item"><a href="/">EN</a></li>
-          <li class="language__body_item"><a href="/">IT</a></li>
-          <li class="language__body_item"><a href="/ua">UA</a></li>
-        </ul>
-      </li>
-</astro-dropdown>
+import { localizePath } from "astro-i18next";
+import i18next from "i18next";
 
+const currentLanguage = i18next.language;
+const { pathname } = Astro.url;
+
+const languages = [
+  { languageCode: "en", value: "EN" },
+  { languageCode: "it", value: "IT" },
+  { languageCode: "ua", value: "UA" },
+];
+---
+<li class="header__nav_item language">
+  <p class="language__current" lang="en">{currentLanguage}</p>
+  <ul class="language__body">
+    {
+      languages.map((language) => {
+        const { languageCode, value } = language;
+        let pathValue = localizePath(pathname, languageCode);
+
+        if (languageCode !== currentLanguage) {
+          return (
+            <li class="language__body_item" id={pathValue}>
+              {value}
+            </li>
+          );
+        }
+      })
+    }
+  </ul>
+</li>
 
 <script>
-  class AstroDropdown extends HTMLElement {
-    constructor() {
-        super()
-        //console.log(this.dataset.language);
-    }
-    } 
-    customElements.define('astro-dropdown', AstroDropdown) 
-  
-  const language = document.querySelector(".language") as HTMLLIElement;
-  language.addEventListener("click", (e: Event) => {
-    if (e.target.closest(".language")) {
-      language.classList.toggle("open");
-    }
-    if (e.target.matches('.language__body_item')) {
-        console.log('matches')
+  const languageEl = document.querySelector(".language") as HTMLLIElement;
+
+  languageEl?.addEventListener("click", (e: Event) => {
+    if (e.target instanceof HTMLElement) {
+      languageEl.classList.toggle("open");
+      if(e.target.classList.contains("language__body_item")) {
+        window.location = "http://localhost:3000" + e.target.id;
+      }
     }
   });
 </script>

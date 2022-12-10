@@ -1,0 +1,20 @@
+{
+    "header": {
+      "home": "casa",
+      "projects": "progetti",
+      "about": "su di me",
+      "contact": "contatto"
+    },
+    "footer": {
+      "follow": "seguiteci",
+      "formTitle": "inviaci un messaggio",
+      "placeholderEmail": "la tua email",
+      "placeholderMessage": "il tuo messaggio",
+      "sendBtn": "inviare"
+    },
+    "home": {
+      "phrase": "Quando il vostro spazio vi assomiglia in tutti i suoi aspetti.",
+      "phraseStrong": "modo unico",
+      "projectsBtn": "vedi progetti"
+    }
+  }

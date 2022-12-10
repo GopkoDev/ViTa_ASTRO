@@ -6,6 +6,15 @@
     "contact": "contact"
   },
   "footer": {
-    "test": "ff"
+    "follow": "follow us",
+    "formTitle": "send us a message",
+    "placeholderEmail": "your email",
+    "placeholderMessage": "your message",
+    "sendBtn": "send"
+  },
+  "home": {
+    "phrase": "WHEN YOUR SPACE RESEMBLES YOU IN ALL ASPECTS. WE DESIGN YOUR LIFESTYLE IN A",
+    "phraseStrong": "UNIQUE WAY",
+    "projectsBtn": "view projects"
   }
 }

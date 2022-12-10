@@ -4,19 +4,19 @@
             "nav": [
                 {
                     "title": "home",
-                    "href": "{lng}/"
+                    "href": "/"
                 },
                 {
                     "title": "projects",
-                    "href": "{lng}/projects"
+                    "href": "/projects"
                 },
                 {
                     "title": "about me",
-                    "href": "{lng}/about"
+                    "href": "/about"
                 },
                 {
                     "title": "contact",
-                    "href": "{lng}/contact"
+                    "href": "/contact"
                 }
             ]
         },
