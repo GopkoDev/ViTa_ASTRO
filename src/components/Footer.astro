@@ -1,30 +1,28 @@
 ---
 import '../styles/components/Footer.scss'
-import settings from "../data/settings.json";
+import { t } from "i18next";
 ---
 
 <footer class="footer">
   <div class="footer__container">
     <div class="footer__socials">
-      <h3 class="footer__socials_title">follow us</h3>
+      <h3 class="footer__socials_title">{t('footer.follow')}</h3>
       <div class="footer__socials_icons">
-        {
-          settings.footerIcons.map((icon) => (
-            <a href={icon.href} class="footer__socials_icon">
-                <img src={icon.src} alt={icon.alt}/>
-            </a>
-          ))
-        }
+        <a href="#" class="footer__socials_icons icon-li"></a>
+        <a href="#" class="footer__socials_icons icon-inst"></a>
+        <a href="#" class="footer__socials_icons icon-pinterest"></a>
+        <a href="#" class="footer__socials_icons icon-email"></a>
+        <a href="#" class="footer__socials_icons icon-phone"></a>
       </div>
     </div>
     <form class="footer__form">
-      <h3 class="footer__form_title">send us a message</h3>
+      <h3 class="footer__form_title">{t('footer.formTitle')}</h3>
       <label class="footer__form_label">
-        <input type="text" placeholder="your email" />
+        <input type="text" placeholder={t('footer.placeholderEmail')} />
       </label>
       <label class="footer__form_label">
-        <input class="footer__form_label--input-with-button"type="text" placeholder="your message" />
-        <button type="button">send</button>
+        <input class="footer__form_label-btn"type="text" placeholder={t('footer.placeholderMessage')} />
+        <button type="button">{t('footer.sendBtn')}</button>
       </label>
       <p class="footer__form_copyright">
         Via Giuseppe Mazzini, 9 20123 Milano MI

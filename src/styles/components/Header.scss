@@ -9,18 +9,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   &__logo {
     font-weight: 700;
     font-size: 28px;
     letter-spacing: 5.6px;
     text-transform: uppercase;
   }
-
   &__hamburger {
     display: none;
   }
-
   &__nav {
     width: fit-content;
     cursor: pointer;
@@ -31,8 +28,15 @@
       &:first-child {
         margin-top: 0;
       }
+      &:hover {
+        font-weight: 700;
+        &:last-child { /* ??? */
+          font-weight: 400;
+        }
+      }
       a {
         text-decoration: none;
+        color: $mainColor;
       }
       &.active {
         font-weight: 700;
@@ -57,50 +61,35 @@
 }
 
 .language {
+  display: flex;
   &__current {
-    position: relative;
-    width: fit-content;
-
-    &::before,
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      left: calc(100% + 6px);
-      top: 57%;
-      transform: translateY(-50%);
-      width: 6px;
-      height: 1px;
-      background-color: $mainColor;
-    }
-    &::before {
-      transform: rotate(45deg) translateX(-50%);
-    }
-    &::after {
-      transform: rotate(-45deg) translateX(50%);
+    &:hover {
+      font-weight: 700;
     }
   }
   &__body {
     display: none;
-  }
-  &.open {
-    .language {
-      &__current {
-        &::before {
-          top: 7px;
-          transform: rotate(-45deg) translateX(-50%);
-        }
-        &::after {
-          top: 7px;
-          transform: rotate(45deg) translateX(50%);
-        }
+    margin-left: 5px;
+    &_item {
+      font-weight: 300;
+      font-size: 20px;
+      text-transform: uppercase;
+      padding: 0 10px;
+      border-left: 1px solid #282828;
+      cursor: pointer;
+      &:first-child {
+        border: none;
       }
-      &__body {
-        display: block;
-        margin-top: 10px;
-        margin-left: 25px;
+      &:hover {
+        font-weight: 400;
       }
     }
+  }
+}
+
+.language.open {
+  .language__body {
+    display: flex;
   }
 }
 
@@ -108,10 +97,10 @@
   .nav__wrapper {
     position: absolute;
     width: 100%;
-    height: calc(100vh - 100%);
+    height: 100vh;
     background-color: #fff;
     right: 100%;
-    top: 100%;
+    top: 0;
     transition: all 0.5s;
     visibility: hidden;
     &.active {
@@ -122,8 +111,8 @@
   }
 
   .header__hamburger .active {
-    &--line > .active {
-      &--1 {
+    &_line > .active {
+      &-1 {
         background-color: red;
       }
     }
@@ -143,6 +132,7 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 5px 0;
+      z-index: 3;
       &_line {
         display: block;
         width: 100%;
@@ -164,6 +154,7 @@
 
     &__logo {
       font-size: 32px;
+      z-index: 3;
     }
     &__nav {
       display: flex;
@@ -176,7 +167,9 @@
         // margin-bottom: 38px;
         margin-bottom: 0;
         padding: 19px;
-
+        &:hover {
+          font-weight: 400;
+        }
         a {
           font-size: 38px;
         }
@@ -184,31 +177,35 @@
     }
   }
   .active > .header__hamburger_line {
-    &--1 {
+    &-1 {
       transform: rotate(45deg) translate(-25%);
     }
-    &--2 {
+    &-2 {
       transform: scaleY(0) translate(-25%);
     }
-    &--3 {
+    &-3 {
       transform: rotate(-45deg) translate(-25%);
     }
   }
   .language {
     position: relative;
-
-    &.open {
-      .language {
-        &__body {
-          display: block;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          margin-top: 0;
-          &_item {
-            font-size: 30px;
-            margin-bottom: 10px;
-          }
+    width: 95%;
+    box-sizing: border-box;
+    justify-content: center;
+    &__current {
+      &:hover {
+        font-weight: 400;
+      }
+    }
+    &__body {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      &_item {
+        font-size: 38px;
+        width: 50%;
+        &:first-child {
+          text-align: right;
         }
       }
     }
@@ -231,6 +228,14 @@
         p {
           font-size: 32px;
         }
+      }
+    }
+  }
+  
+  .language {
+    &__body {
+      &-item {
+        font-size: 32px;
       }
     }
   }
