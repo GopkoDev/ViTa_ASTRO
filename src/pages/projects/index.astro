@@ -1,0 +1,60 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/pages/Projects.scss";
+import { projects } from "../../data/projects";
+import { Image } from "@astrojs/image/components";
+
+const rootUrlPath = Astro.url.origin;
+
+changeLanguage("en");
+---
+
+<Layout title="Projects" active="projects">
+  <main class="page projects">
+    <section class="projects__container">
+      {
+        projects.map((project) => (
+          <div class={`projects__item projects__item_${project.id}`}>
+            <Image src={import(`../../images/projects/${project.folderName}/main.jpg`)} alt={`${project.project} project`}/>
+            <div class="projects__item_information">
+              <ul class="projects__item_information-list">
+                <li class="projects__item_information-item projects__item_information-item-title">
+                  project: <span>{project.project}</span>
+                </li>
+                <li class="projects__item_information-item">
+                  year: <span>{project.year}</span>
+                </li>
+                <li class="projects__item_information-item">
+                  Location: <span>{project.location}</span>
+                </li>
+              </ul>
+              <ul class="projects__item_information-list">
+                <li class="projects__item_information-item">
+                  type: <span>{project.type}</span>
+                </li>
+                <li class="projects__item_information-item">
+                  phase: <span>{project.phase}</span>
+                </li>
+              </ul>
+              <ul class="projects__item_information-list">
+                <li class="projects__item_information-item">
+                  DESIGNER: <span>{project.designer}</span>
+                </li>
+                <li class="projects__item_information-item">
+                  collaboration: <span>{project.collaboration}</span>
+                </li>
+                <li class="projects__item_information-item">
+                  DIGITAL ARTIST: <span>{project.digitalArtist}</span>
+                </li>
+              </ul>
+            </div>
+            <a href={`${rootUrlPath}/projects/${project.id}`} class="projects__item_information-btn btn">
+              view project
+            </a>
+          </div>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
