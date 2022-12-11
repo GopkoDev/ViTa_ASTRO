@@ -1,10 +1,79 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import "../../styles/pages/Contact.scss";
+import MonkaPhoto from "../../images/contact_page_photo.png";
 
 changeLanguage("it");
 ---
 
-<Layout title="Contact">
-    Contact
+<Layout title="Contact" active="contact">
+  <main class="page contact">
+    <div class="contact__container">
+      <section class="contact__headline">
+        <div class="contact__headline_img">
+            <Image src={MonkaPhoto} alt="main page image" />
+        </div>
+        <div class="contact__headline_content">
+          <p class="contact__headline_content-headline">
+            {t("contact.headlineText")}
+          </p>
+          <p class="contact__headline_content-email">
+            {t("contact.contact")}: <span>hello@taniamonics.com</span>
+          </p>
+          <button class="btn contact__headline_content-btn">{t("contact.contactBtnText")}</button>
+        </div>
+      </section>
+
+      <section class="contact__contacts">
+        <div class="contact__contacts_main">
+          <p class="contact__contacts_main-title">{t("contact.phone")}</p>
+          <a href="tel:+393474374756" class="contact__contacts_main-data"
+            >+39 347 4374756</a
+          >
+          <p class="contact__contacts_main-title">{t("contact.email")}</p>
+          <a
+            href="mailto:hello@taniamonics.com"
+            class="contact__contacts_main-data">hello@taniamonics.com</a
+          >
+        </div>
+
+        <div class="contact__contacts_socials">
+          <p class="contact__contacts_socials-title">{t("contact.behance")}</p>
+          <a class="contact__contacts_socials-data" href="#">monka</a>
+          <p class="contact__contacts_socials-title">{t("contact.instagram")}</p>
+          <a href="#" class="contact__contacts_socials-data">@monka</a>
+        </div>
+        <div class="contact__contacts_address">
+          <p class="contact__contacts_address-title">{t("contact.address")}</p>
+          <a
+            href="https://www.google.de/maps/place/Via+Giuseppe+Mazzini,+9,+20123+Milano+MI,+Italien"
+            class="contact__contacts_address-data"
+            >Via Giuseppe Mazzini, 9 20123 Milano MI</a
+          >
+        </div>
+      </section>
+      <form action="" class="contact__form">
+        <h1 class="contact__form_title">{t("contact.formTitle")}</h1>
+        <p class="contact__form_subtitle">
+            {t("contact.formSubtitle")}
+        </p>
+        <label for=""
+          ><input
+            type="text"
+            class="contact__form_input"
+            placeholder={t("contact.placeholderName")}
+          />
+        </label>
+        <input type="text" class="contact__form_input" placeholder={t("contact.placeholderEmail")} />
+        <input type="text" class="contact__form_input" placeholder={t("contact.placeholderPhone")} />
+        <textarea
+          class="contact__form_input contact__form_input-textarea"
+          placeholder={t("contact.placeholderMessage")}
+        />
+        <button class="btn contact__form_btn">{t("contact.formButtonText")}</button>
+      </form>
+    </div>
+  </main>
 </Layout>

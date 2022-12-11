@@ -16,5 +16,22 @@
       "phrase": "Quando il vostro spazio vi assomiglia in tutti i suoi aspetti.",
       "phraseStrong": "modo unico",
       "projectsBtn": "vedi progetti"
+    },
+    "contact": {
+      "headlineText": "Per tutte le richieste e le informazioni generali",
+      "contact": "contatto",
+      "contactBtnText": "collegare",
+      "phone": "telefono",
+      "email": "email",
+      "behance": "behance",
+      "address": "indirizzo",
+      "instagram": "instagram",
+      "formTitle": "Lavoriamo insieme",
+      "formSubtitle": "Inviatemi un messaggio per discutere il vostro progetto in modo più dettagliato.",
+      "placeholderName": "nome",
+      "placeholderEmail": "email",
+      "placeholderPhone": "telefono",
+      "placeholderMessage": "messaggio",
+      "formButtonText": "inviare il messaggio"
     }
   }

@@ -1,0 +1,27 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../layouts/Layout.astro";
+import { projects } from '../../data/projects';
+
+export async function getStaticPaths() {
+    return projects.map(project => ({
+        params: {
+            slug: project.id
+        },
+        props: {
+            project
+        }
+    }
+    ))
+}
+
+const project = Astro.props.project;
+
+changeLanguage("en");
+---
+
+<Layout title={`Project - ${project.project}`} active="projects">
+    <div class="page">
+        {`Project: ${project.project.toUpperCase()}`}
+    </div>
+</Layout>
