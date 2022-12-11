@@ -16,5 +16,22 @@
     "phrase": "WHEN YOUR SPACE RESEMBLES YOU IN ALL ASPECTS. WE DESIGN YOUR LIFESTYLE IN A",
     "phraseStrong": "UNIQUE WAY",
     "projectsBtn": "view projects"
+  },
+  "contact": {
+    "headlineText": "For all inquiries and general information",
+    "contact": "contact",
+    "contactBtnText": "connect",
+    "phone": "phone",
+    "email": "email",
+    "behance": "behance",
+    "address": "address",
+    "instagram": "Instagram",
+    "formTitle": "Let's work together",
+    "formSubtitle": "Send me a message to discuss your project in further detail.",
+    "placeholderName": "name",
+    "placeholderEmail": "email",
+    "placeholderPhone": "phone",
+    "placeholderMessage": "message",
+    "formButtonText": "send message"
   }
 }

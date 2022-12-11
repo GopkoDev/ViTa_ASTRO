@@ -16,5 +16,22 @@
     "phrase": "КОЛИ ВАШ ПРОСТІР СХОЖИЙ НА ВАС У ВСІХ АСПЕКТАХ. МИ ПРОЕКТУЄМО ВАШ СТИЛЬ ЖИТТЯ.",
     "phraseStrong": "УНІКАЛЬНИМ ЧИНОМ",
     "projectsBtn": "переглянути проекти"
+  },
+  "contact": {
+    "headlineText": "Для всіх запитів та загальної інформації",
+    "contact": "контакт",
+    "contactBtnText": "звʼязатися",
+    "phone": "телефон",
+    "email": "електронна адреса",
+    "behance": "behance",
+    "address": "адреса",
+    "instagram": "instagram",
+    "formTitle": "Давайте працювати разом",
+    "formSubtitle": "Надішліть мені повідомлення, щоб обговорити Ваш проект більш детально.",
+    "placeholderName": "ім'я",
+    "placeholderEmail": "електронна адреса",
+    "placeholderPhone": "телефон",
+    "placeholderMessage": "повідомлення",
+    "formButtonText": "надіслати повідомлення"
   }
 }

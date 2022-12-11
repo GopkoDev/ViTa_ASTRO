@@ -1,6 +1,6 @@
-@import '../breakpoints';
-@import '../variables';
-@import '../fonts/icons';
+@import "../breakpoints";
+@import "../variables";
+@import "../fonts/icons";
 
 .footer {
   &__container {
@@ -23,15 +23,17 @@
       justify-content: space-between;
       margin-top: 52px;
       a {
+        margin: 0;
         text-decoration: none;
         color: $mainColor;
         width: 38px;
         height: 38px;
+        border-radius: 50%;
         position: relative;
         &:hover {
           color: #fff;
-          border-radius: 50%;
           background-color: #000;
+          transition: all 0.3s;
         }
         &::before {
           position: absolute;
