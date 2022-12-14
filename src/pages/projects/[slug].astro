@@ -1,27 +1,76 @@
 ---
 import { changeLanguage } from "i18next";
+import { Image } from "@astrojs/image/components";
 import Layout from "../../layouts/Layout.astro";
-import { projects } from '../../data/projects';
+import "../../styles/pages/Project.scss";
+import { projects } from "../../data/projects";
+import ProjectCover from "../../components/ProjectCover.astro";
 
 export async function getStaticPaths() {
-    return projects.map(project => ({
-        params: {
-            slug: project.id
-        },
-        props: {
-            project
-        }
-    }
-    ))
+  return projects.map((project) => ({
+    params: {
+      slug: project.id,
+    },
+    props: {
+      project,
+    },
+  }));
 }
 
+const rootUrlPath = Astro.url.origin;
 const project = Astro.props.project;
+const numOfImages = project.projectContent.numOfImg;
+const arrOfImgIndexes = Array.from(Array(numOfImages).keys());
 
 changeLanguage("en");
 ---
 
 <Layout title={`Project - ${project.project}`} active="projects">
-    <div class="page">
-        {`Project: ${project.project.toUpperCase()}`}
-    </div>
+  <div class="page project">
+    <section class="project__container">
+      <ProjectCover project={project} />
+      {
+        arrOfImgIndexes.map((index) => {
+          const id = `id_${index + 1}`;
+          const projectInfo = project.projectContent.phrases;
+          let infoContainer = null;
+          if (id in projectInfo) {
+            const imgDescription = projectInfo[id];
+            infoContainer = imgDescription.map((description) => (
+              <p>{description}</p>
+            ));
+          }
+          return (
+            <div class="project__img">
+              <Image
+                src={import(
+                  `../../images/projects/${project.folderName}/${index + 1}.jpg`
+                )}
+                alt={`${project.project} project`}
+              />
+              {infoContainer && (
+                <div class="project__info">{infoContainer}</div>
+              )}
+            </div>
+          );
+        })
+      }
+      <div class="project__nav">
+        {
+          project.id !== "salty-sand" && (
+            <a href={`${rootUrlPath}/projects/${project.previousProject}`} class="project__nav_link">
+              Previous project
+            </a>
+          )
+        }
+        {
+          project.id !== "quite-memories" && (
+              <a href={`${rootUrlPath}/projects/${project.nextProject}`} class="project__nav_link">
+                Next project
+              </a>
+          )
+        }
+      </div>
+    </section>
+  </div>
 </Layout>

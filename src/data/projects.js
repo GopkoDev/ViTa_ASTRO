@@ -8,8 +8,22 @@ export const projects = [
     designer: "Monka",
     collaboration: "virgina",
     digitalArtist: "volodymyr",
-    id: "1",
+    id: "salty-sand",
+    previousProject: null,
+    nextProject: "eunoia",
     folderName: "salty_sand",
+    projectContent: {
+      numOfImg: 16,
+      phrases: {
+        id_1: [
+          "Main scene: quiet morning on a seaside, wind touches your skin, gentle rays of sun on the floor… you are welcoming new day at the villa. Renovated architecture with 2 floors, personal exit to the beach, and large outdoor space.",
+          "The environment of the location influenced the choice of the materials and color palette. Sandy shades bringing outside nature to the interior. The geometry creates volumes of the space bringing the strong presence of brutalism elements.",
+        ],
+        id_12: [
+          "Etcetera lounge chair bu Jan Ekselius is a sensual continuation of the ocean waves, a perfect place to have a rest.",
+        ],
+      },
+    },
   },
   {
     project: "eunoia",
@@ -20,8 +34,18 @@ export const projects = [
     designer: "Monka",
     collaboration: null,
     digitalArtist: "volodymyr",
-    id: "2",
+    id: "eunoia",
+    previousProject: "salty-sand",
+    nextProject: "beyond-olives",
     folderName: "eunoia",
+    projectContent: {
+      numOfImg: 3,
+      phrases: {
+        id_1: [
+          "EUNOIA from greek means beautiful thinking. Designed for the showroom of the clothing and accessories. Depending on geometry and complexity of.",
+        ],
+      },
+    },
   },
   {
     project: "beyond olives",
@@ -31,8 +55,14 @@ export const projects = [
     designer: "Monka",
     collaboration: null,
     digitalArtist: "volodymyr",
-    id: "3",
+    id: "beyond-olives",
+    previousProject: "eunoia",
+    nextProject: "streetstyle-dna",
     folderName: "beyond_olives",
+    projectContent: {
+      numOfImg: 2,
+      phrases: {},
+    },
   },
   {
     project: "SREETSTYLE DNA",
@@ -43,8 +73,19 @@ export const projects = [
     designer: "Monka",
     collaboration: "virginia",
     digitalArtist: "volodymyr",
-    id: "4",
+    id: "streetstyle-dna",
+    previousProject: "beyond-olives",
+    nextProject: "artists-dimora",
     folderName: "streetstyle_dna",
+    projectContent: {
+      numOfImg: 10,
+      phrases: {
+        id_1: [
+          "If you take an old vintage black jacket and give it a new cool life, that would be our project. Provocative but elegant, old but renovated with a beautiful story of a new beginning.  The whole space is enlightened by natural lights coming from the beautiful big black metal windows that remind the typical high windows of Brooklyn’s loft. Is like being transported into the stylish Brooklyn neighborhoods. “Be a ribel, be wild”  – that is what the project is about.",
+          "The former aeronautics mechanical industrial space has been transformed into a hybrid work and production environment, spanning nearly 1360 sq. ft. over two floors. Designed to promote a sense of community and to add balance to casual workdays, the office merges versatile and fluid work zones with social spaces, drawing on a masculine palette and bold blue color.",
+        ],
+      },
+    },
   },
   {
     project: "artists dimora",
@@ -54,8 +95,19 @@ export const projects = [
     designer: "Monka",
     collaboration: null,
     digitalArtist: "volodymyr",
-    id: "5",
+    id: "artists-dimora",
+    previousProject: "streetstyle-dna",
+    nextProject: "raw-cafe",
     folderName: "artists_dimora",
+    projectContent: {
+      numOfImg: 14,
+      phrases: {
+        id_1: [
+          "Private apartment is located close to forest area. Concept of the wood as a key element came naturally. It creates  warm background and main mood for the whole space.",
+          "Geometry of the space is focused on the straight lines and soft corners of the upholstered furniture. Preference on art selection was given to Lou Lou Avenue. This way we have achieved a desirable visual effect.",
+        ],
+      },
+    },
   },
   {
     project: "RAW CAFE",
@@ -65,9 +117,15 @@ export const projects = [
     phase: "DESIGN DEVELOPMENT",
     designer: "Monka",
     collaboration: null,
-    digitalArtist: "NULL",
-    id: "6",
+    digitalArtist: null,
+    id: "raw-cafe",
+    previousProject: "artists-dimora",
+    nextProject: "bitter-sweet",
     folderName: "raw_cafe",
+    projectContent: {
+      numOfImg: 2,
+      phrases: {},
+    },
   },
   {
     project: "BITTER SWEET",
@@ -78,8 +136,20 @@ export const projects = [
     designer: "Monka",
     collaboration: null,
     digitalArtist: "VOLODYMYR",
-    id: "7",
+    id: "bitter-sweet",
+    previousProject: "raw-cafe",
+    nextProject: "quite-memories",
     folderName: "bitter_sweet",
+    projectContent: {
+      numOfImg: 5,
+      phrases: {
+        id_1: [
+          "The Folks patisserie interior is about the balance, between sweet and salt. Newly renovated building provides space with natural light and functional zoning. Space is divided into the welcome area, fast-drinking coffee place, relaxing area, seating, and long-chatting place.",
+          "In the entrance zone the floor patterns, made of a brass profile, guides guests through the patisserie shop areas. The brass pattern is inspired by traditional Ukrainian culture. Marble murals create balance with rough concrete walls and add a sense of comfort.",
+          "Tanya Mon Folks Patisserie Cafe is Silver Design Award winner in 2018 - 2019 Interior Space and Exhibition Design Award Category.",
+        ],
+      },
+    },
   },
   {
     project: "QUITE MEMORIES",
@@ -90,7 +160,20 @@ export const projects = [
     designer: "Monka",
     collaboration: null,
     digitalArtist: "VOLODYMYR",
-    id: "8",
+    id: "quite-memories",
+    previousProject: "bitter-sweet",
+    nextProject: null,
     folderName: "quite_memories",
-  }
+    projectContent: {
+      numOfImg: 6,
+      phrases: {
+        id_1: [
+          "Home of greek who moved to Germany. Its a strict lines but golden memories. We all have time when we need to go back to our roots. And keep it in interior where we lived in.",
+        ],
+        id_3: [
+          'The selection of materials is based on the contrast concept. White carrara marble with a combination of black   "open book" effect marble on the wall. Soft leather upholstery with a concrete floor finish. Brass profile to break the matt surface.',
+        ],
+      },
+    },
+  },
 ];
